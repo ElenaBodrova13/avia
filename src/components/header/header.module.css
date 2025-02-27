@@ -1,0 +1,28 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  width: 502px;
+  height: 50px;
+}
+.btn {
+  background-color: aquamarine;
+  border: 1px solid #dfe5ec;
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #4a4a4a;
+  font-size: medium;
+}
+.btn:hover {
+  background-color: #2196f3;
+  color: white;
+}
+.btnWrapper:first-child > .btn {
+  background-color: rgb(255, 0, 21);
+  border-radius: 8px 0px 0px 8px;
+}
+.btnWrapper:last-child > .btn {
+  background-color: blue;
+  border-radius: 0px 8px 8px 0px;
+}

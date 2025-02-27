@@ -1,0 +1,15 @@
+.btn {
+  border: 1px solid #dfe5ec;
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: medium;
+  background-color: #2196f3;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.btnWrapper {
+  width: 502px;
+  height: 50px;
+}

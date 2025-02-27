@@ -1,0 +1,65 @@
+.sidebar {
+  background-color: rgb(239, 239, 241);
+  height: 252px;
+  width: 232px;
+  display: grid;
+  box-shadow: 2px 2px 5px gray;
+  padding-left: 20px;
+}
+
+.check {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.check + span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.check + span::before {
+  content: '';
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  border: 1px solid #9abbce;
+  border-radius: 2px;
+  margin-right: 0.5em;
+  position: relative;
+}
+
+.checkbox {
+  background-color: papayawhip;
+}
+.check:checked + span::before {
+  background-image: url(../img/Shape.png);
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+
+  border: 2px, solid, #2196f3;
+}
+
+.check:not(:disabled):not(:checked) + span:hover::before {
+  border-color: #4aa6f2;
+}
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.check:not(:disabled):active + span::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+/* стили для чекбокса, находящегося в фокусе */
+.check:focus + span::before {
+  box-shadow: 0 0 0 0.2rem rgba(80, 239, 11, 0.25);
+}
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.check:focus:not(:checked) + span::before {
+  border-color: #80bdff;
+}
+/* стили для чекбокса, находящегося в состоянии disabled */
+.check:disabled + span::before {
+  background-color: #e9ecef;
+}

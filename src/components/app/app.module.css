@@ -1,0 +1,22 @@
+.wrapper {
+  background-color: palevioletred;
+  display: grid;
+  grid-template-columns: 250px auto;
+  justify-content: center;
+  font-family: 'Open Sans';
+  column-gap: 20px;
+}
+
+.mane {
+  background-color: blueviolet;
+  width: 502px;
+  display: grid;
+  gap: 20px;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../font/OpenSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

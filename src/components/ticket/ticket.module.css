@@ -1,5 +1,4 @@
 .companyLogo {
-  background-image: url(../img/S7.png);
   background-size: cover;
   display: block;
 
@@ -9,16 +8,15 @@
 .ticket {
   display: grid;
   height: 184px;
-  width: 502px;
-  background-color: greenyellow;
+  max-width: 502px;
+  box-shadow: 2px 2px 5px gray;
   grid-template-rows: repeat(3, 1fr);
+  background-color: white;
 }
 .rowOne,
 .rowTwo,
 .rowThree {
   height: 40px;
-  background-color: brown;
-  border: 1px solid;
 }
 .rowOne {
   display: grid;

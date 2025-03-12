@@ -1,5 +1,12 @@
+@media (max-width: 490px) {
+  .wrapper {
+    display: block !important;
+  }
+}
+.fon {
+  background-color: #f3f7fa;
+}
 .wrapper {
-  background-color: palevioletred;
   display: grid;
   grid-template-columns: 250px auto;
   justify-content: center;
@@ -8,8 +15,7 @@
 }
 
 .mane {
-  background-color: blueviolet;
-  width: 502px;
+  max-width: 502px;
   display: grid;
   gap: 20px;
 }

@@ -10,6 +10,9 @@ export const checkItem = (checked, id) => ({
   id,
 })
 
+export const sortChip = (id) => ({ type: 'SORT_CHIP', payload: id })
+export const sortFaster = (id) => ({ type: 'SORT_FASTER', payload: id })
+export const sortOptimal = (id) => ({ type: 'SORT_OPTIMAL', payload: id })
 export const fetchSuccess = (tickets) => ({
   type: 'FETCH_SUCCESS',
   payload: tickets,
@@ -18,6 +21,8 @@ export const fetchSuccess = (tickets) => ({
 export const recordId = (id) => ({ type: 'REC_ID', payload: id })
 
 export const reqTicketsDone = () => ({ type: 'REC_DONE' })
+
+export const getInitialTickets = (tickets) => ({ type: 'INISHIAL_TICKETS', payload: tickets })
 
 export const reqTicketsError = (e) => ({
   type: 'REQ_TICKETS_ERROR',
@@ -34,10 +39,10 @@ export const getAllTickets = () => async (dispatch, getState) => {
     const response = await f.fetchAllTickets(getState().gestId)
     if (response.ok) {
       const data = await response.json()
-
+      console.log('data.tickets', data)
       dispatch(fetchSuccess(data.tickets))
 
-      if (getState().tickets.length > 9000) {
+      if (getState().tickets.length > 2000) {
         dispatch(reqTicketsDone())
       } else {
         dispatch(getAllTickets())

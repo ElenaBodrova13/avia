@@ -1,23 +1,46 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import * as actions from '../../actions'
 
 import s from './header.module.css'
 
-export default function Header() {
+function Header({ sortChip, sortOptimal, ticketsSortMore, sortFaster, moreSorted }) {
+  console.log(ticketsSortMore)
+  const x = `${s.active} ${s.btn}`
+
   return (
     <header>
       <div className={s.header}>
         <div className={s.btnWrapper}>
-          <button className={s.btn} type="button">
+          <button
+            className={moreSorted === 'chip' ? x : s.btn}
+            type="button"
+            id="chip"
+            onClick={(e) => {
+              sortChip(e.target.id)
+            }}
+          >
             Самый дешевый
           </button>
         </div>
         <div className={s.btnWrapper}>
-          <button className={s.btn} type="button">
+          <button
+            id="fast"
+            className={moreSorted === 'fast' ? x : s.btn}
+            type="button"
+            onClick={(e) => sortFaster(e.target.id)}
+          >
             Самый быстрый
           </button>
         </div>
         <div className={s.btnWrapper}>
-          <button className={s.btn} type="button">
+          <button
+            id="optimal"
+            className={moreSorted === 'optimal' ? x : s.btn}
+            type="button"
+            onClick={(e) => sortOptimal(e.target.id)}
+          >
             Оптимальный
           </button>
         </div>
@@ -25,3 +48,10 @@ export default function Header() {
     </header>
   )
 }
+function mapSate(state) {
+  return {
+    ticketsSortMore: state.ticketsSortMore,
+    moreSorted: state.moreSorted,
+  }
+}
+export default connect(mapSate, actions)(Header)

@@ -24,3 +24,8 @@
 .btnWrapper:last-child > .btn {
   border-radius: 0px 8px 8px 0px;
 }
+
+.active {
+  background-color: #2196f3;
+  color: white;
+}

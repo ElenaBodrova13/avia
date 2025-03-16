@@ -5,8 +5,7 @@ import * as actions from '../../actions'
 
 import s from './header.module.css'
 
-function Header({ sortChip, sortOptimal, ticketsSortMore, sortFaster, moreSorted }) {
-  console.log(ticketsSortMore)
+function Header({ sortChip, sortOptimal, sortFaster, moreSorted }) {
   const x = `${s.active} ${s.btn}`
 
   return (
@@ -50,7 +49,6 @@ function Header({ sortChip, sortOptimal, ticketsSortMore, sortFaster, moreSorted
 }
 function mapSate(state) {
   return {
-    ticketsSortMore: state.ticketsSortMore,
     moreSorted: state.moreSorted,
   }
 }

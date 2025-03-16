@@ -15,7 +15,7 @@ const initialState = {
     createCheckbox('3 пересадки', 'Three'),
   ],
   ticketsSort: [],
-  ticketsSortMore: [],
+
   tickets: [],
   counter: 5,
   gestId: null,
@@ -129,7 +129,6 @@ const rootReducer = (state = initialState, action = {}) => {
       return { ...state, isDone: true }
 
     case 'FETCH_SUCCESS':
-      console.log('fetch secses', state.tickets)
       return { ...state, tickets: [...state.tickets, ...action.payload] }
     case 'INISHIAL_TICKETS':
       return {

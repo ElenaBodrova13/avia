@@ -39,10 +39,11 @@ export const getAllTickets = () => async (dispatch, getState) => {
     const response = await f.fetchAllTickets(getState().gestId)
     if (response.ok) {
       const data = await response.json()
-      console.log('data.tickets', data)
-      dispatch(fetchSuccess(data.tickets))
+      const tickets = data.tickets.map((t) => ({ ...t, new: t.price + t.segments[0].duration * 15 }))
 
-      if (getState().tickets.length > 2000) {
+      dispatch(fetchSuccess(tickets))
+
+      if (getState().tickets.length > 9000) {
         dispatch(reqTicketsDone())
       } else {
         dispatch(getAllTickets())

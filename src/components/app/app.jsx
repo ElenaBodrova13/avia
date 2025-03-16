@@ -16,8 +16,7 @@ import s from './app.module.css'
 function App({
   tickets,
   getInitialTickets,
-  ticketsSortMore,
-  moreSorted,
+
   getAllTickets,
   counter,
   ticketsSort,
@@ -28,25 +27,14 @@ function App({
 }) {
   useEffect(() => {
     getAllTickets()
-    console.log(1, tickets)
   }, [])
-  console.log(moreSorted, ticketsSortMore, getInitialTickets, isStart, getInitialTickets)
-  console.log(2, tickets)
-  /*
+
+  let showTickets = tickets
+
   if (isDone && isStart) {
-    console.log('getinitstate', tickets)
     getInitialTickets(tickets)
   }
-    
- */
-  let showTickets = tickets.map((t) => {
-    t.new = 15
-    /* t.price + t.segments[0].duration * 15
-     */
-    return t
-  })
-  console.log(3, tickets)
-  console.log('showtickets', showTickets)
+
   if (
     !checkboxes[0].checked &&
     (checkboxes[1].checked || checkboxes[2].checked || checkboxes[3].checked || checkboxes[4].checked)
@@ -111,7 +99,6 @@ function App({
 }
 
 function mapSate(state) {
-  console.log('state', state)
   return {
     checkboxes: state.checkboxes,
     tickets: state.tickets,
@@ -119,8 +106,7 @@ function mapSate(state) {
     ticketsSort: state.ticketsSort,
     isDone: state.isDone,
     error: state.error,
-    ticketsSortMore: state.ticketsSortMore,
-    moreSorted: state.moreSorted,
+
     isStart: state.isStart,
   }
 }
